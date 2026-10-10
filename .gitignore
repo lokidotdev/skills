@@ -1,0 +1,13 @@
+# Local-only research material (third-party screenshots, raw notes)
+_local/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Python
+__pycache__/
+*.pyc
