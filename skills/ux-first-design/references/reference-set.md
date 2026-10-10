@@ -1,11 +1,8 @@
 # The Reference Set
 
-This skill was distilled from 358 product-design shots: 38 primary images plus 282 more from the same thread. They're mostly the portfolio work of a product designer (Marcel Kargul / kargul.studio) and cover modern SaaS, AI and mobile products. The source images are not published in this repo (they are third-party work). In the author's local checkout they live at:
+This skill was distilled from 358 product-design shots: 38 primary images plus 282 more from the same thread. They're mostly the portfolio work of a product designer (Marcel Kargul / kargul.studio) and cover modern SaaS, AI and mobile products. The source images are third-party work and are **not distributed** with this skill; image IDs below (for example `images/13`) refer to the author's private research set.
 
-- `_local/ux-first-design-research/images/` (the 38 primary shots, `NN_<id>.png|jpg`)
-- `_local/ux-first-design-research/thread_images/` (all 320 thread shots, `NNN_<id>.png|jpg`; includes the 38)
-
-You don't need the images to use the skill. Every rule has been written out in the reference files. Use the images only to look at a pattern visually.
+You don't need the images. Every rule has been written out in the reference files.
 
 ## What the set covers
 - **Desktop SaaS**: CRMs and record tables, sales, marketing and SEO analytics, finance dashboards, recruiting/ATS, support inboxes, LLM-ops and dev tools (deployments, logs, DB monitoring, API testing), security scanners, workflow and agent builders, docs and help-center analytics, HR (time off, scheduling), healthcare, smart home, maps and logistics.

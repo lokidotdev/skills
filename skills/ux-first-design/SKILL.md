@@ -1,6 +1,6 @@
 ---
 name: ux-first-design
-description: UX-first product design for creating, updating, revamping and auditing app interfaces such as SaaS dashboards, CRMs and data tables, inboxes and chat, settings, signup and onboarding, pricing and paywalls, AI assistants and agents, workflow builders, and mobile apps. Use it whenever someone asks to design, build, redesign, revamp, polish, review or audit a screen, flow, page or component. Also use it when they ask to "improve the UX/UI", "make it look modern" or "fix usability", or to write UI copy or empty, loading and error states, even if they only say "make this page better". It works UX first (the user's job, the flow, every state, consequences, copy) and only then applies the visual layer. Distilled from a 358-shot reference set of modern product designs.
+description: "UX-first product design for creating, updating, revamping and auditing app interfaces. It starts from the user's job, the flow, every state and the consequences of each action, writes the UI copy, and only then applies the visual layer. Ships a WCAG contrast checker and a UX/accessibility lint script. Use when someone asks to design, build, redesign, polish, review or audit a screen, flow, page or component (SaaS dashboards, CRMs, data tables, inboxes, chat, settings, signup, onboarding, pricing, paywalls, AI assistants, workflow builders, mobile apps), or says 'improve the UX/UI', 'make it look modern', 'fix usability', 'make this page better', or needs empty, loading and error states. Keywords: ux, ui, product design, usability, accessibility, wcag, dashboard, onboarding, ux audit, design review."
 ---
 
 # UX-First Design
@@ -157,7 +157,7 @@ The UI serves the UX. Full tokens and rules are in [visual-system](references/vi
 - **Type**: one sans-serif for the UI, with **tabular or mono figures** for numbers, IDs, code and timestamps. Section and table headers are small uppercase mono labels. Build hierarchy from size, weight and colour together.
 - **Space**: a 4px grid. Group by proximity, use whitespace before divider lines, and align to columns.
 - **Icons**: one outline set with a consistent stroke, used as leading icons on nav, properties and KPI labels. Icon-only buttons need a tooltip and an `aria-label`. Primary navigation keeps its text labels.
-- **Motion and touch feel**: follow the `apple-design` skill (instant press feedback, springs, interruptible motion, reduced motion).
+- **Motion and touch feel**: follow the `apple-design` skill if installed (instant press feedback, springs, interruptible motion, reduced motion).
 - **Verify contrast** with `scripts/contrast.py`: 4.5:1 for body text, 3:1 for large text and UI parts.
 
 ## Anti-Patterns Found in Polished Designs
