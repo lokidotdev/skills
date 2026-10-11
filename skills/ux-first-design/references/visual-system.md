@@ -8,7 +8,7 @@ The visual layer exists to make the UX decisions legible. The reference set conv
 - semantic status chips
 - tabular figures
 - small uppercase labels
-- generous space
+- generous space, with few words per card
 
 **If the product already has a design system, use it.** The tokens below are a sensible default and a checklist, not a mandate. All colour pairs below were checked with `scripts/contrast.py`.
 
@@ -17,7 +17,7 @@ The visual layer exists to make the UX decisions legible. The reference set conv
 2. Colour tokens (light and dark)
 3. Status colour system
 4. Typography
-5. Spacing, layout and density
+5. Spacing, breathing room and alignment
 6. Shape and elevation
 7. Iconography and imagery
 8. Components: visual rules
@@ -33,8 +33,9 @@ The visual layer exists to make the UX decisions legible. The reference set conv
 2. **One accent colour.** It's used for the primary action, active nav, selection, focus ring and links. Two accents compete.
 3. **Hierarchy from size, weight and colour together**, never size alone.
 4. **Whitespace before lines, and lines before boxes.** Separate with space first, then hairlines, then cards.
-5. **Consistency is the craft.** The same thing looks the same everywhere: chips, deltas, row heights, radii, icon stroke.
-6. **Every value is a deliberate choice you can defend.** Use tokens, not one-off hex codes or px values.
+5. **Leave room.** The calm references feel calm because of the space they don't fill: wide gaps between sections, narrow columns for focused tasks, and few text lines per card.
+6. **Consistency is the craft.** The same thing looks the same everywhere: chips, deltas, row heights, radii, icon stroke.
+7. **Every value is a deliberate choice you can defend.** Use tokens, not one-off hex codes or px values.
 
 ---
 
@@ -136,18 +137,46 @@ Rules:
 
 ---
 
-## 5. Spacing, layout and density
-- **4px grid**: 4 · 8 · 12 · 16 · 20 · 24 · 32 · 40 · 48 · 64.
-- Card padding is 16–24px. Gaps between cards are 12–16px (dense) or 16–24px (airy). Sections are 32–48px apart.
+## 5. Spacing, breathing room and alignment
+
+### The rhythm
+Use a **4px grid**: 4 · 8 · 12 · 16 · 20 · 24 · 32 · 40 · 48 · 64. Spacing shows grouping, so **the gap between groups is at least twice the gap inside a group**. When every gap is the same, nothing reads as a group.
+
+| Relationship | Desktop | Mobile | Examples |
+|---|---|---|---|
+| Inside a unit | 4–8px | 4–8px | Label to value, title to subtitle, icon to text, field label to input |
+| Between items in a group | 12–16px | 12–16px | Form fields, list rows with gaps, chips, KPI cards in a row |
+| Between groups, cards and panels | 24–32px | 16–24px | Card grid gutters, page header to content, form sections |
+| Between page sections | 40–64px | 32–40px | "My tasks" to "Recently visited", the KPI row to the charts |
+| Page inset | 32–40px | 16–20px | Main content padding from the sidebar and the window edge |
+| Card padding | 20–24px | 16–20px | 16px only in deliberately compact tools |
+
+### Density
+- **Comfortable is the default.** Use the airy end of each range: desktop controls 36px, standard table rows 44px, list rows 40–48px, and mobile list rows 56–72px.
+- **Compact is a deliberate choice** for surfaces where people scan many rows: tables, logs, inboxes, trading and monitoring. Even there, keep page-level spacing generous. Only the rows get tighter.
+- Pick one density per surface and don't mix compact cards with airy ones on the same page.
+- Controls are 32–36px high on desktop (28px compact, 40px large) and 44–52px on mobile.
+- Table rows are 36–44px (32px compact).
+
+### Room to breathe
+- **Narrow columns for focused work.** Forms ≤560px, settings ≤720px, reading content ≤720px. Onboarding questions, review steps, empty states and an empty AI composer sit in a centered column of about 400–560px with open space around it. Don't stretch them to fill the screen.
+- **At most three text levels per unit**: a label, a value and a meta line. A fourth level (a description under a KPI, a second meta line) usually belongs in a tooltip, the detail view, or nowhere.
+- **Let the hero breathe.** A big number or a page title needs 16–24px of clear space around it. Hero numbers shouldn't sit tight against a delta, a chart and a description all at once.
+- **Don't fill every slot.** An empty area next to a focused task is fine. A large empty area on a page that should have content is an empty state problem, which is different (see `ux-foundations.md` §5).
+- Prose stays at 60–80 characters per line, with a 1.5 line height for body text.
+
+### Alignment
+- **One left edge per column.** Titles, body, inputs, table text and card edges line up on it. Indent only to show nesting.
+- **Siblings share one anatomy.** Cards in the same row have the same parts in the same order, so their labels, values and actions sit on shared lines. If one card in a row needs a description, either every card gets one, clamped to the same number of lines with actions pinned to the bottom, or none of them do. Uneven text is the most common cause of ragged rows.
+- **Numbers align right and labels left.** KPI values in a row share a baseline.
+- **Fixed slots for variable text.** Truncate titles to one line and clamp descriptions to two, with the full text on hover or in the detail view, so long content doesn't break the grid.
 - Layout widths:
   - sidebar: 232–264px
   - inspector/detail panel: 320–400px
   - settings column: ≤720px
   - forms: ≤560px
   - reading content: ≤720px
-- Controls are 32–36px high on desktop (28px compact, 40px large) and 44–52px on mobile.
-- Table rows are 36–44px in standard density and 32px compact. Mobile list rows are 56–72px.
-- Align everything to columns. Numbers align right and labels left. Check vertical rhythm between cards.
+- Check vertical rhythm between cards and sections before calling the layout done.
 
 ---
 

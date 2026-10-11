@@ -49,6 +49,9 @@ Paths are relative to the folders above. A `t` prefix means `thread_images/`.
 | Course path with locked and progress states | `images/26`, `t224`, `t309` |
 | Pricing, trial and paywall honesty | `t059`, `t108`, `t257` |
 | Tracking timeline and live ETA | `t270`, `t274`, `t175` |
+| Restraint: few words, lots of space, calm alignment | `images/35`–`38` (= `t315`–`t317`), `t205`, `t238`, `t240`, `t251`, `t272`, `t282`, `t300` |
+| Descriptions that earn their place (consequence, constraint, surprising logic, jargon) | `t068`, `t099` ("Leave empty for public buckets"), `t160`, `t229`, `t238`, `t264`, `t289` |
+| Over-described (counterexamples) | `t221` (a description on every card), `t252` (chart subtitles restating titles), `t141` and `t099` ("Storage configuration: configure your storage instance settings"), `t290` ("Profile: profile data"), `t295` (each step described twice), `t217` (page subtitle repeated on the first section), `t286` (the same description on two cards) |
 
 ## Flaws observed (kept as teaching examples)
 - Delta colours inverted: `images/16` (bounce rate ▲ green), `images/20` (returns ▼ red).
@@ -60,3 +63,13 @@ Paths are relative to the folders above. A `t` prefix means `thread_images/`.
 - Low-contrast titles on dark cards and repeated descriptions: `images/04`.
 - Mixed units in one leaderboard: `images/15`.
 - Typos "Taks" (`images/24`), "Is you skin" / "No at all" (`images/18`), "Alergies" (`t304`).
+- Placeholder subtitles shipped because every block had a subtitle slot: "Lorem ipsum dolor sit amet dummy" (`t221`, `t226`), "Lorem Ipsum" (`t277`).
+- Subtitles that restate their titles, and descriptions on every sibling card, make otherwise polished dashboards look busy and break row alignment: `t221`, `t252`, `t290`.
+
+## What the set says about words and space
+Across the set, the calm screens share three habits:
+- They answer most questions with structure and signals: placement, a chip, a count, a delta, a verb. A screen typically has zero to three sentences, and each sits at a decision.
+- KPI and chart cards carry a label, a value and a comparison, never a paragraph. Definitions hide behind ⓘ.
+- Space does the grouping: wide gaps between sections, narrow centered columns for focused tasks, and room around hero numbers.
+
+The busy screens describe every card and section, often with a subtitle that restates the title. That's where the skill's [restraint rules](../SKILL.md#restraint-words-and-space) come from.

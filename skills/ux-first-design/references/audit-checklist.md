@@ -29,7 +29,7 @@ Use this to review existing UI, to plan a revamp, and as the final self-check on
 |---|---|---|
 | **P0 Blocker** | Users can't complete a core task, lose data or money, or are harmed or misled | No way to undo or recover a destructive action; payment without a review step; an inaccessible primary flow; misleading delta colours on financial data |
 | **P1 Major** | Significant confusion, error-prone flows, broken trust | Placeholder-only labels; unlabeled icon actions on key paths; missing error states; no feedback on save; hidden pricing terms |
-| **P2 Minor** | Friction or inconsistency with a workaround | Dropdown for 3 options; inconsistent chip colours; missing counts; vague button labels |
+| **P2 Minor** | Friction or inconsistency with a workaround | Dropdown for 3 options; inconsistent chip colours; missing counts; vague button labels; a description on every card or section that buries the ones that matter; a cramped layout with no spacing rhythm |
 | **P3 Polish** | Craft and delight | Spacing rhythm, alignment, micro-interactions, typography tuning |
 
 ---
@@ -44,7 +44,7 @@ Use this to review existing UI, to plan a revamp, and as the final self-check on
 - [ ] Work in progress is resumable ("Continue where you left off", drafts).
 
 ### B. Wayfinding and IA
-- [ ] Title + purpose subtitle on each page. Breadcrumbs from depth 2.
+- [ ] A specific title on each page, with a subtitle only where the title doesn't carry the scope or effect. Breadcrumbs from depth 2.
 - [ ] Clear active nav state. Nav is grouped by job and labels are specific.
 - [ ] Global scope (workspace, environment, date range) is visible and restated.
 - [ ] Steppers name steps and show progress. "x of y" positions are given.
@@ -58,7 +58,7 @@ Use this to review existing UI, to plan a revamp, and as the final self-check on
 - [ ] Destructive actions are separated, styled, and placed last.
 
 ### D. States
-- [ ] First-use empty: value + one CTA + shortcut.
+- [ ] First-use empty: says what goes here + one CTA (+ one line on how it works for a new concept).
 - [ ] No results: echoes the query, offers clear or adjust.
 - [ ] Loading: skeleton or labeled progress, no layout shift, nothing blocking the whole UI unnecessarily.
 - [ ] Errors: what, why, fix; input preserved; placed next to the cause.
@@ -92,7 +92,8 @@ Use this to review existing UI, to plan a revamp, and as the final self-check on
 ### H. Data and numbers
 - [ ] Every KPI has a baseline + delta. **Delta colour follows metric polarity.**
 - [ ] Quotas show used/limit. Verdicts include thresholds. Freshness is shown.
-- [ ] Charts have insight titles, descriptions, legends, tooltips and annotations.
+- [ ] Charts have clear titles, legends and tooltips. Subtitles, annotations and recommendations appear only where something needs explaining.
+- [ ] KPI cards carry label, value, delta and baseline, with no description sentences. Freshness is shown once per source.
 - [ ] Tables: right-aligned tabular numbers, explicit empty cells, status chips, bulk actions, side detail.
 - [ ] Filters are readable (`Label: value`) and applied filters are visible and clearable.
 - [ ] No placeholder or duplicate data in demos or screenshots.
@@ -109,6 +110,9 @@ Use this to review existing UI, to plan a revamp, and as the final self-check on
 - [ ] One term per concept. Copy matches the layout.
 - [ ] Buttons name outcomes. No "Submit", "OK" or "Click here".
 - [ ] Jargon is defined (ⓘ or inline).
+- [ ] No description restates its title, repeats something on screen, or narrates the UI.
+- [ ] No sentence where a label, chip, count, verb or ⓘ would do. Each remaining line answers "what would the user get wrong without it?"
+- [ ] Nothing is under-explained either: irreversible actions, costs, hidden consequences and sensitive asks each have their one line.
 
 ### K. Accessibility
 - [ ] Contrast: text ≥4.5:1, large text and UI ≥3:1 (checked with `contrast.py`).
@@ -120,7 +124,12 @@ Use this to review existing UI, to plan a revamp, and as the final self-check on
 
 ### L. Visual consistency
 - [ ] One accent colour. A semantic status palette used consistently.
-- [ ] Spacing on a 4px grid. Consistent radii, row heights, icon set and stroke.
+- [ ] Spacing on a 4px grid with a visible rhythm: gaps between groups are at least twice the gaps inside them, and sections are separated by space.
+- [ ] Comfortable density by default. Compact only where people scan many rows.
+- [ ] Forms, settings, review steps, onboarding and empty states sit in a narrow column with room around them.
+- [ ] Sibling cards share one anatomy. Labels, values and actions line up across a row, and no card is taller only because its description wrapped.
+- [ ] At most three text levels per card or row.
+- [ ] Consistent radii, row heights, icon set and stroke.
 - [ ] Typographic scale applied consistently. Tabular numbers.
 - [ ] Elevation used only for floating layers. Hairlines over heavy borders.
 - [ ] Dark mode checked separately.
@@ -139,7 +148,11 @@ Use this to review existing UI, to plan a revamp, and as the final self-check on
 | Typos | Undoes a premium impression instantly | Proofreading pass |
 | Low-contrast titles on dark cards | Unreadable | Check contrast; use `--text` tokens |
 | Mixed units in one list | Ranking is meaningless | One unit per list or column |
-| Blank area with no guidance | Users stall | Empty state with value + CTA |
+| Blank area with no guidance | Users stall | Empty state with a headline + CTA |
+| Subtitle restating the title ("Profile: profile data") | Adds reading, says nothing, and trains users to skip the subtitles that matter | Delete it, or state the scope, effect or cost |
+| A description on every card, chart or section | Noise, ragged card heights, values that don't line up | Label + value + meta; ⓘ for definitions; if needed, give every sibling one, clamped to the same length |
+| The same explanation twice | Clutter and doubt ("is this different?") | Say it once, nearest the decision |
+| Cramped layout (dense everywhere, no section spacing) | Nothing reads as a group, the page feels heavy | Spacing rhythm (group gap ≥ 2× item gap), comfortable density, narrow focused columns |
 | Generic CTAs and "Are you sure?" | Users click through without reading | Outcome verbs, specific consequences, undo |
 | Confirm dialog for reversible actions | Friction plus habituation | Undo toast |
 | Dropdown for 2–5 options | Hides choices; costs 2 taps | Segmented control or option cards |

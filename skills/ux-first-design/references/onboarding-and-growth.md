@@ -60,11 +60,13 @@ Use this for signup and login, onboarding wizards, first-run and empty states, a
 ---
 
 ## 4. Empty states and first run
-An empty screen is the best onboarding surface you have. It has four parts:
-1. **What this place is for**, framed as a benefit: "Streamline your outreach with workflows."
-2. **How it works**, in one sentence: "Set up a workflow and new leads are added to your campaigns on a daily, weekly or monthly cadence."
-3. **One primary action**: "Create workflow", "+ Add experience", "Upload image".
-4. **An optional shortcut**: "Import from another platform", "Start with a template", "▶ How it works", sample data.
+An empty screen is the best onboarding surface you have. Two parts are required and two are optional:
+1. **What this place is for**: "No experience added yet", or framed as a benefit, "Streamline your outreach with workflows."
+2. **One primary action**: "Create workflow", "+ Add experience", "Upload image".
+3. *Optional, for a concept the user hasn't met before*: **how it works**, in one sentence: "Set up a workflow and new leads are added to your campaigns on a daily, weekly or monthly cadence." A familiar object (a post, a contact, a file) doesn't need it.
+4. *Optional*: **a shortcut**: "Import from another platform", "Start with a template", "▶ How it works", sample data.
+
+Keep it in a narrow centered column with plenty of space around it. Small empty sections inside a page (a profile tab, a side panel) need only a one-line headline and the action.
 
 - Teach the input method in the empty state: "Speak or type to begin", "Press Fn to talk".
 - Prefer an illustration or ghost preview (greyed-out sample charts or cards) over a big blank area.

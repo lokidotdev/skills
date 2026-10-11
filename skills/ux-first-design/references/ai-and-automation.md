@@ -27,7 +27,7 @@ AI features fail on trust, not on capability. The user has to know what the AI i
 ---
 
 ## 2. Entry: the empty composer
-- A **purpose headline + subline**, rather than a blank box: "Hey, what leads are you looking for? Our AI assistant will help you build an accurate search." · "Describe your inference pipeline: models, routing, optimization and hosting. From chat to production API in minutes."
+- A **purpose headline + subline**, rather than a blank box: "Hey, what leads are you looking for? Our AI assistant will help you build an accurate search." · "Describe your inference pipeline: models, routing, optimization and hosting. From chat to production API in minutes." Center the composer in a narrow column and leave the space around it empty. That emptiness is what makes it feel inviting.
 - **Suggestion chips** for common intents ("Design to code", "Fix code", "Explain code"; "Shot stats", "Swing tips", "Book tee time").
 - **Templates with slots**: "Optimize `[Llama 3.1 8B]` on `[vLLM]` for the cheapest GPU with latency and VRAM checks"; autocomplete that completes the user's sentence.
 - **Help for people who don't know what to write**: "Reference", "Try a new style", "Randomize".
@@ -97,7 +97,7 @@ AI features fail on trust, not on capability. The user has to know what the AI i
         │  + (insert between)
 ```
 - **Colour by node type and keep it consistent**: triggers (bolt), conditions (branch), actions, waits, AI steps.
-- **Each node explains itself in one sentence**: "Triggered when a new subscriber signs up for your newsletter", "Wait until Monday at 9:00 AM. Ensures the welcome email is sent at an optimal time."
+- **Each node reads as a plain-language step**, either through its title ("Send auto-reply text message", "Add processing tag") or one summary line under a type label ("Wait until Monday at 9:00 AM", "Triggered when a new subscriber signs up for your newsletter"). Add a *why* only when the step would otherwise look arbitrary. Every node on the canvas shares the same anatomy.
 - **Incomplete nodes say what's missing, with an example**: "Branch on 0 conditions. Add a condition, e.g. Opened Email 1 = True." An unset description shows "No description" in muted text.
 - **Label branches** ("If true / If false", "Clicked / Not clicked", "Need to escalate"). Show "+" at every insertion point and at the ends of branches.
 - **A palette grouped by kind** (Actions / Listeners / Rules; Messages / Data / Delays / Flow control), with drag-and-drop and a lifted drag state, plus "View tutorial".

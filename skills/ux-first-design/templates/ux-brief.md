@@ -44,9 +44,10 @@
 **Anxiety points and the reassurance line for each**:
 
 ## 8. Content
-- Page title + subtitle:
+- Page title (+ subtitle only if the title can't carry the scope or effect):
 - Primary CTA label(s):
-- Key helper text, empty state copy, error copy:
+- The few places that need a sentence (a hidden consequence, a constraint, surprising logic, a real worry), with the copy for each:
+- Empty state and error copy:
 - Terms to keep consistent:
 
 ## 9. Constraints

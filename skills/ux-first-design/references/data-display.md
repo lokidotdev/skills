@@ -1,6 +1,6 @@
 # Data Display: Numbers, KPIs, Charts, Tables, Dashboards
 
-In the reference set, the most common gap between a good data screen and a great one wasn't the visuals. It was context. A number with no comparison, verdict or freshness forces the user to do the analysis themselves.
+In the reference set, the most common gap between a good data screen and a great one wasn't the visuals. It was context. A number with no comparison forces the user to do the analysis themselves. The great screens add that context in a few characters (a delta chip, "vs last month", "/ 100%", an ⓘ, a one-word verdict), not in sentences. The weaker ones put a description under every card and chart, which makes the dashboard noisy and knocks the values out of line.
 
 ## Contents
 1. The number sentence
@@ -30,9 +30,13 @@ In the reference set, the most common gap between a good data screen and a great
 | Verdict | What it means | "Optimal", "Fair", "Needs improvement", "Positive dominated" |
 | Freshness | How current it is | "Updated 11:30 AM", "Last sync 2m ago" |
 
-You don't need every part every time. Use the parts the user needs to act. Value + baseline + delta is the minimum for any KPI.
+This table is a menu, not a checklist. **The default KPI is label + value + delta + baseline.** Add the other parts only when the user acts on them:
+- a target or limit when there is one (quotas, goals, budgets)
+- a verdict when non-experts need meaning, as one word or a short chip ("Optimal", "Stable", "Top 8% in skincare")
+- freshness once per page or per data source, not on every card
+- a definition behind ⓘ, not as a line of text under the label
 
-**Translate into human value** when you can: "Automation saved you a total of 93.2 hours last month" says more than "Automated tasks: 1,204".
+**Translate into human value** when you can: "Automation saved you a total of 93.2 hours last month" says more than "Automated tasks: 1,204". One such sentence per screen is plenty.
 
 ---
 
@@ -83,7 +87,7 @@ Non-experts need meaning, and experts like confirmation.
 
 ## 5. Freshness and data lag
 
-- Show freshness on every live or synced surface: "Last update: just now", "Updated Monday, Oct 21, 11:30 AM", "Last sync 2m ago".
+- Show freshness once for each live or synced source, usually in the page header or the card group's header: "Last update: just now", "Updated Monday, Oct 21, 11:30 AM", "Last sync 2m ago". Repeat it per card only when cards update independently.
 - Disclose delays and gaps honestly: "Metrics may be delayed by an hour and aren't updated for inactive projects." · "Updates take up to 1 hour."
 - Give auto-refresh a visible interval and controls ("Refresh · 30 seconds ▾", pause and resume streaming).
 - Make missing data an explicit, actionable state ("Overnight data missing ›"), never an unexplained dip to zero.
@@ -99,7 +103,9 @@ Non-experts need meaning, and experts like confirmation.
 │ ▲ 6.4%  from last week   ▂▃▅▃▆▇     │  ← delta chip + baseline + sparkline
 └──────────────────────────────────────┘
 ```
-- Use 3–5 per row, ordered by importance, with the same anatomy on every card.
+- Use 3–5 per row, ordered by importance, with the same anatomy on every card so labels, values and deltas line up across the row.
+- **No description sentence under the label.** A KPI card has at most three text levels: label, value, and one line of delta or comparison. Put definitions behind ⓘ.
+- Give it room: 20–24px padding, and 8–12px between the label and the value.
 - A card can carry a composition sub-row: "With promotion 62% · Without 38%", "Desktop 8,900 · Mobile 3,550".
 - A clickable card shows ↗ or a hover state. When the cards *select* a chart's metric, highlight the selected card.
 - **Never ship duplicate placeholder values** (three cards all reading "3,926"). It reads as broken.
@@ -121,15 +127,15 @@ Non-experts need meaning, and experts like confirmation.
 | Many metrics at once | Small multiples with shared axes |
 
 ### Chart rules
-- **The title states the insight or question**, and a subtitle describes the measure ("Trace latency: P95 and P50 over time"). Example: "Program task completion rate within SLA over the last 30 days."
+- **Titles**: a plain noun title is fine for most charts ("Sales trend", "Traffic analytics"). Give an insight or question title to the one chart the page is about ("We've generated 3,920 leads today", "Task completion within SLA, last 30 days"). Add a subtitle only when the measure is ambiguous (units, P95 vs P50), never one that restates the title ("Project timeline: monitor milestone progress over time").
 - Put the legend near the data, or label lines directly. Keep each series' colour the same across the whole app.
 - Tooltips show the date, every series' value, and the difference ("On Running 2.37K · New Balance 1.89K · Difference 10.2%").
-- **Annotate**: auto-mark the highest and lowest points; label events on spikes or dips ("Email blast"); add a "today" line; hatch or fade future and incomplete periods; show the previous period as a ghost line.
+- **Annotate what needs explaining**, usually one or two marks: the highest and lowest points, an event on a spike or dip ("Email blast"), a "today" line, hatching for future or incomplete periods, a ghost line for the previous period.
 - Bars start at zero. Keep gridlines faint and use ≤6 axis ticks with abbreviated values ($10k).
 - Highlight the current or selected bar in full colour and leave the others as tints.
 - Use tints of one hue for related series (new vs returning). Distinct hues are for unrelated categories.
-- **Close with a recommendation** when the data supports one: "Consistently high utilization may require scaling executor capacity. Learn more."
-- Every chart card offers a period control, expand-to-fullscreen, export or share, and "View more details ›".
+- **Close with a recommendation** only when there's a concrete action: "Consistently high utilization may require scaling executor capacity. Learn more."
+- Show the controls people use on that chart (usually the period). Put expand, export and share in a "…" menu instead of a row of buttons on every card.
 
 ---
 
@@ -167,6 +173,7 @@ Mobile: turn rows into cards that keep the 2–3 columns the user scans for, and
 7. **Setup progress** while onboarding isn't finished ("Workspace setup 2/4").
 
 - The header carries scope (product, location, team), date range + compare, and granularity (daily / weekly / monthly), plus Share, Export and Customize ("Set as default", "+ Add card").
+- Keep the words few: a greeting or summary line, label + value + delta on the KPIs, plain chart titles, and at most one insight sentence. Separate the sections listed above with 40–64px of space rather than extra headings and descriptions.
 - Primary jobs go in quick actions ("Send an invoice", "Draft a proposal", "+ Create flow").
 - An empty dashboard shows sample or ghost charts with "Connect a data source", not a grid of zeros.
 

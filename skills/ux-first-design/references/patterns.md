@@ -19,7 +19,7 @@ Each pattern lists its anatomy (what goes where) and the UX rules that make it w
 ┌───────────────┬────────────────────────────────────────────┐
 │ ◉ Workspace ▾ │ Breadcrumb › Page            ⌕   🔔  ? (+) │
 │ ⌕ Search   ⌘K │ Title [Status]  ★                          │
-│               │ One-line purpose subtitle                  │
+│               │ (subtitle only if the title can't carry it)│
 │ GROUP LABEL   │ [Tab] [Tab] [Tab]          [Secondary][Pri]│
 │ ▸ Item     12 │ ─────────────────────────────────────────  │
 │ ▸ Item  ⚠     │ content…                                   │
@@ -35,7 +35,7 @@ Each pattern lists its anatomy (what goes where) and the UX rules that make it w
 Sidebar width is 232–264px, collapsible to 56–64px with tooltips. Group labels are small uppercase, optionally mono. See `ux-foundations.md` §2.
 
 ### Page header
-Breadcrumb → title + status chip + favorite → subtitle → tabs (with counts) → actions, with exactly one primary action on the right. Editors add an autosave state. Detail pages add an ID with a copy button (`ID ab12…ef ⧉`).
+Breadcrumb → title + status chip + favorite → subtitle (optional: scope, cost or effect the title can't carry, one line, often inline after the title as `Title · muted subtitle`) → tabs (with counts) → actions, with exactly one primary action on the right. Editors add an autosave state. Detail pages add an ID with a copy button (`ID ab12…ef ⧉`). Leave 24–32px between the header and the content.
 
 ### Toolbar
 Search (the placeholder names its fields) · filter pills `Label: Value ▾` · `+ Add filter` · sort · group by · view toggle (list/grid) · date range with "compare to" · granularity · Export / Share. Applied filters show as removable chips under it, along with a result count.
@@ -54,10 +54,10 @@ Left: the collection (selected row tinted, with a left accent). Middle: the obje
 ## Data
 
 ### KPI card
-Icon + label ⓘ · ↗ drill-in · large tabular value + muted unit · delta chip (arrow, %, polarity colour) + "vs [baseline]" · optional sparkline or mini-bars · optional verdict chip · optional composition rows. Full rules are in `data-display.md` §6.
+Icon + label ⓘ · ↗ drill-in · large tabular value + muted unit · delta chip (arrow, %, polarity colour) + "vs [baseline]" · optional sparkline or mini-bars · optional verdict chip · optional composition rows. No description sentence. Full rules are in `data-display.md` §6.
 
 ### Chart card
-Title (an insight or question) + description · controls (period, compare, group by) · legend · chart · annotations · footer insight or recommendation · expand, share, export.
+Title (a plain noun, or an insight for the page's main chart) · the controls people use (usually the period) · legend · chart · the one or two annotations that need explaining · "…" menu for expand, share and export. Add a subtitle only when the measure is ambiguous, and a footer recommendation only when there's a concrete action.
 
 ### Table
 See `data-display.md` §8. Essentials: type-icon headers, tabular right-aligned numbers, status chips, explicit empty cells, hover actions, bulk bar, side-panel detail.
@@ -66,7 +66,7 @@ See `data-display.md` §8. Essentials: type-icon headers, tabular right-aligned 
 Header: breadcrumb or parent, title, copy link, open full page, more, ✕. Body: a **properties list**, then description, subtasks, attachments, and comments or activity. The composer is pinned to the bottom.
 
 ### Properties list
-Each row is an icon + muted label on the left and an editable value on the right (Status chip, Assignee avatar, Due "Today", Priority bar icon, Project, Created by). Empty values are invitations that explain their purpose: "+ Set a deadline or schedule", "+ Organize content with labels", "+ Mark importance level". End with "+ Add property".
+Each row is an icon + muted label on the left and an editable value on the right (Status chip, Assignee avatar, Due "Today", Priority bar icon, Project, Created by). Empty values are short invitations: "Add a description…", "+ Set a deadline", "+ Add label". End with "+ Add property".
 
 ### Activity feed
 Grouped by day (Today / Yesterday). Each item: actor avatar + a sentence ("Roger changed the assignee to…") with state chips + relative time. Comments sit inline. Long runs collapse to "Show more" or "View 3 more replies".
@@ -113,14 +113,14 @@ Title (+ subtitle) · ✕ · content · footer: **secondary on the left** ("Disc
 
 ### Settings page
 - Tabs with icons (Profile · Security · API · Notifications · Integrations · Billing) and doc links on the right.
-- A narrow content column (≤720px).
-- Section title + description.
-- **Rows**: icon tile + title + muted meta ("Last changed 3 months ago") + ONE right-aligned action (Change / toggle / Download), with status badges where relevant ("2FA · Enabled").
+- A narrow content column (≤720px), with 32–40px between sections.
+- Section title, plus a one-line description when the section's effect isn't obvious ("New teammates start with: applied the moment someone accepts an invite").
+- **Rows**: icon tile + title + muted meta that's *data*, not explanation ("Last changed 3 months ago") + ONE right-aligned action (Change / toggle / Download), with status badges where relevant ("2FA · Enabled"). A row gets a description line only when its title doesn't say what it does. "Profile: profile data" is noise.
 - A danger zone at the bottom, separated ("Delete account").
 - Session lists mark "This device" and offer "Sign out of all other sessions".
 
 ### Wizard and stepper
-A named stepper (✓ done, current, upcoming) · one focused question or section per step · a live preview where it helps · Back + Continue (the CTA names the next step or result) · Skip for non-essential steps · a review step before commit · data survives Back.
+A named stepper (✓ done, current, upcoming) · one focused question or section per step, in a narrow centered column · a live preview where it helps · Back + Continue (the CTA names the next step or result) · Skip for non-essential steps · a review step before commit · data survives Back. Describe each step once. If the stepper shows step descriptions, the page header doesn't repeat them.
 
 ### Review step
 A summary card per section, each with "Edit" / "Change" and its source ("from your profile"), then totals or consequences, the exact list of who receives what, and a final CTA with the verb and key value.
@@ -129,7 +129,7 @@ A summary card per section, each with "Edit" / "Change" and its source ("from yo
 Grabber · title · ✕ · content · a sticky primary CTA. Use it for create, quick edit, pickers, confirmation and celebrations. It dims the background. Swipe down dismisses, unless there's unsaved input.
 
 ### Option cards
-For ≤5 choices that need explanation: icon + title + one line of consequence + a radio or checkbox in the corner. The selected card gets an accent border and tint. Disabled cards show the reason ("Coming soon").
+For ≤5 choices that need explanation: icon + title + one line of consequence + a radio or checkbox in the corner. Every card gets the same anatomy and the same line count, so the cards stay level. The selected card gets an accent border and tint. Disabled cards show the reason ("Coming soon").
 
 ### Segmented control
 2–5 short options of the same kind (Weekly / Monthly / Yearly; 1D 1W 1M 3M 1Y; HD 2K 4K; Light / Dark / System). It shows the current value at a glance and switches in one tap. Use it instead of a dropdown.

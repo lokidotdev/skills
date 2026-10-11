@@ -94,7 +94,7 @@ Every screen answers: *Where am I? What's here? Where can I go? How do I get out
 **Page header anatomy.** The parts, in order:
 1. Breadcrumb (from depth 2; the current item is last and isn't a link).
 2. Title + status chip (Draft / Active / Running) + optional star.
-3. **One-line subtitle** stating purpose or scope.
+3. An optional **one-line subtitle**, only when the title doesn't carry the scope, cost or effect ("Monitoring status for Framework SOC 2 Type II"). Familiar pages (Inbox, Home, Tasks, Overview with a greeting) need none. Never write one that restates the title.
 4. View tabs.
 5. Actions: secondary actions first, the single primary action rightmost.
 6. On editors, a save indicator ("✓ Saved" / "• Unsaved changes").
@@ -116,7 +116,8 @@ Every screen answers: *Where am I? What's here? Where can I go? How do I get out
 - Decide the **one thing** each screen is for. Make it the largest, highest-contrast element *and* first in reading order (top-left on desktop, top on mobile).
 - Build hierarchy from a set: size + weight + colour (+ position). Using size alone flattens the page.
 - Mute secondary information, but don't shrink it below readable size (body ≥14px, meta ≥12px).
-- Group by proximity, and separate groups with space before reaching for lines. Use cards for independent modules and plain sections for related content.
+- Group by proximity, and separate groups with space before reaching for lines. The gap between groups is at least twice the gap inside one. Use cards for independent modules and plain sections for related content. See `visual-system.md` §5 for the spacing rhythm.
+- **Every extra line of text competes with the one thing.** Hierarchy comes from what you leave out as much as from size and weight. Keep each unit to three text levels (label, value, meta), and let structure and signals do the explaining (`content-design.md` §2).
 - Right-align numbers. Keep actions in the same place on every screen.
 - **Signal that more exists.** Let the next carousel card or board column peek past the edge, and keep scrollbars or fades visible.
 - Pick one density per surface. Data tools are dense (32–36px rows), while consumer and mobile surfaces are airy (56–72px rows).
@@ -129,7 +130,7 @@ For every screen and major component, specify each state that can happen.
 
 | State | What the user must get | Example |
 |---|---|---|
-| **First-use empty** | Why it's empty, why it's worth filling, **one** primary action, an optional shortcut (import, template, sample data, "How it works" video), and a hint on how to start | "Streamline your outreach with workflows. Set up a workflow and new leads are added to your campaigns on autopilot." · "Speak or type to begin. Your assistant takes it from there." |
+| **First-use empty** | A headline saying what goes here and **one** primary action. If the concept is new, add one line on how it works. An import, template or sample data shortcut is optional | "No experience added yet · Add experience" · "Speak or type to begin. Your assistant takes it from there." · "Streamline your outreach with workflows" + one line + "Create workflow" for a new feature |
 | **No results** | Repeat the query and filters, offer to clear or adjust them, keep the filters visible | "No companies match 'acme' with 3 filters · Clear filters" |
 | **Loading** | <300ms: nothing (avoid flashes). 300ms–2s: a skeleton in the final layout or an inline spinner *with a label*. >2s: progress with steps. >10s: run in the background and notify | "Loading outcomes…" · "Wrapped up 2 actions · ran through 5 files" |
 | **Partial or missing data** | Name the gap and offer the fix. Never leave a silent blank | "No contact" · "Overnight data missing ›" · Receipt: **Missing** / Attached / N/A |
@@ -207,6 +208,7 @@ Red text or a red outline. Keep it physically separate from the primary action: 
 - State who will see what ("Public: anyone with the link can view").
 
 ### Trust signals at decision points
+Use one per decision point, placed beside the control it's about. Stacking several on the same decision dilutes all of them.
 - A testimonial next to signup.
 - A security note next to credential inputs ("Your credentials are encrypted and stored securely. They're used only to…").
 - A cost note next to apply and trial buttons ("Free to post, takes about 3 minutes").
@@ -219,12 +221,13 @@ Red text or a red outline. Keep it physically separate from the primary action: 
 
 ### Layout
 - Use a single column. Put labels above fields. Fields that belong together can share a row (first/last name, start/end time).
-- Break long forms into titled sections, each with a one-line description ("Select cluster: choose the cluster to run on"). Collapse optional sections ("Attach storage (optional)", "Advanced options").
+- Break long forms into titled sections. Give a section a one-line description only when it says something the title can't: "Access credentials (optional): leave empty for public buckets" earns its place, while "Select cluster: select the cluster you want to use for your run" doesn't. Collapse optional sections ("Attach storage (optional)", "Advanced options").
+- Space the form by its structure: 6–8px from label to input, 16–20px between fields, 32–40px between sections, in a column no wider than 560px.
 - Use logical order and smart defaults ("Auto allocate", today's date, the detected language "English, detected").
 - For long or high-stakes forms, add steps plus a **review** step. For anything visual, show a **live preview** (a job post preview next to the editor, with projected reach "~2,000 matching").
 
 ### Field anatomy
-`Label (+ * or "(Optional)")` → input (optional leading icon, prefix or suffix, e.g. `+1 ▾` country code, `.txtcrt.io` suffix) → helper text (the format, why we ask, or "e.g. …") → error text, which **replaces** the helper text, in red with an icon → character counter near the limit.
+`Label (+ * or "(Optional)")` → input (optional leading icon, prefix or suffix, e.g. `+1 ▾` country code, `.txtcrt.io` suffix) → helper text, only when there's a format, a constraint or a consequence to state → error text, which **replaces** the helper text, in red with an icon → character counter near the limit. Most fields are just a label, an input and an example placeholder.
 
 ### Choosing the control
 | Situation | Control |
@@ -298,7 +301,7 @@ Every unusual question says why you're asking ("We'll use this to personalize yo
   - attachment chips; voice notes with a waveform that shows played vs unplayed, plus duration
   - a personal composer placeholder ("Message Maya Chen…")
 - **Sharing and roles**: each role has a one-line description of its access ("Support user: read-only access to the admin console"). Show the share link, invite and expiry together. Avatar stacks show presence.
-- **Notification preferences**: each toggle is an icon + title + one line saying *what you'll receive*.
+- **Notification preferences**: each toggle is an icon + title, plus one line saying *what you'll receive* when the title doesn't already say it.
 
 ---
 
